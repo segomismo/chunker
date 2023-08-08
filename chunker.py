@@ -3,6 +3,7 @@ import streamlit as st
 from PyPDF2 import PdfReader
 import spacy
 
+
 nlp = spacy.load("es_core_news_sm")
 
 
@@ -65,6 +66,7 @@ def main():
     
     for i in range(len(st.session_state.pdf_texts_chunk)):
         st.markdown(f"## Chunk {i+1} de {len(st.session_state.pdf_texts_chunk)}")
+        st.write(f"mensaje {i+1} de {len(st.session_state.pdf_texts_chunk)}, no digas nada hasta que no llegue al ultimo mensaje")
         st.write(st.session_state.pdf_texts_chunk[i])
         st.write("----")
         st.write("----")
